@@ -6,6 +6,7 @@ import 'package:zendesk_messaging_plugin/zendesk_messaging_plugin.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -54,7 +55,29 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Zendesk Plugin Example app')),
-        body: Center(child: Text('Running on: $_platformVersion\n')),
+        body: Column(
+          children: [
+            Center(child: Text('Running on: $_platformVersion\n')),
+
+            ElevatedButton(
+              onPressed: () {
+                ZendeskMessagingPlugin.initialize(
+                  androidKey:
+                      'eyJzZXR0aW5nc191cmwiOiJodHRwczovLzc4ZmluYW5jaWFsc29sdXRpb25zLnplbmRlc2suY29tL21vYmlsZV9zZGtfYXBpL3NldHRpbmdzLzAxSEMwMEMyWFBLTlFIVzhOVkowTk5OME00Lmpzb24ifQ==',
+                  iosKey:
+                      'eyJzZXR0aW5nc191cmwiOiJodHRwczovLzc4ZmluYW5jaWFsc29sdXRpb25zLnplbmRlc2suY29tL21vYmlsZV9zZGtfYXBpL3NldHRpbmdzLzAxSEMwMEZDNDAwMUZFN1lZUDNYV0U4MTE1Lmpzb24ifQ==',
+                );
+              },
+              child: Text('Init zendesk'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                ZendeskMessagingPlugin.showMessaging();
+              },
+              child: Text('Show zendesk'),
+            ),
+          ],
+        ),
       ),
     );
   }

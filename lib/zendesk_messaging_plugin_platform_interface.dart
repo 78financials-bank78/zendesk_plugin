@@ -8,7 +8,8 @@ abstract class ZendeskMessagingPluginPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static ZendeskMessagingPluginPlatform _instance = MethodChannelZendeskMessagingPlugin();
+  static ZendeskMessagingPluginPlatform _instance =
+      MethodChannelZendeskMessagingPlugin();
 
   /// The default instance of [ZendeskMessagingPluginPlatform] to use.
   ///
@@ -26,4 +27,8 @@ abstract class ZendeskMessagingPluginPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> initialize({required String iosKey, required String androidKey});
+
+  Future<void> showMessaging();
 }

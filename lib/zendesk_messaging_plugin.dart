@@ -25,6 +25,23 @@ class ZendeskMessagingPlugin {
       );
       return;
     }
+
+    try {
+      await ZendeskMessagingPluginPlatform.instance.initialize(
+        iosKey: iosKey,
+        androidKey: androidKey,
+      );
+    } catch (e) {
+      debugPrint('ZendeskMessagingPlugin: Initialization Error - $e');
+    }
+  }
+
+  static Future<void> showMessaging() async {
+    try {
+      await ZendeskMessagingPluginPlatform.instance.showMessaging();
+    } on PlatformException catch (e) {
+      debugPrint('ZendeskMessagingPlugin: Error - $e');
+    }
   }
 
   Future<String?> getPlatformVersion() {

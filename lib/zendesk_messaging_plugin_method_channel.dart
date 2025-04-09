@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -12,10 +14,32 @@ class MethodChannelZendeskMessagingPlugin
 
   @override
   Future<String?> getPlatformVersion() async {
-    print(('OPOPLLL""'));
     final version = await methodChannel.invokeMethod<String>(
       'getPlatformVersion',
     );
     return version;
+  }
+
+  @override
+  Future<void> initialize({
+    required String iosKey,
+    required String androidKey,
+  }) async {
+    try {
+      await methodChannel.invokeMethod('initialize', {
+        'channelKey': Platform.isAndroid ? androidKey : iosKey,
+      });
+    } catch (e) {
+      debugPrint('ZendeskError: Error - $e');
+    }
+  }
+
+  @override
+  Future<void> showMessaging() async {
+    try {
+      await methodChannel.invokeMethod('show');
+    } catch (e) {
+      debugPrint('ZendeskMessagingPlugin: Error - $e');
+    }
   }
 }
