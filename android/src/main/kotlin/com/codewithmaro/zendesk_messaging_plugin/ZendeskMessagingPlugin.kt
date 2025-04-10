@@ -16,7 +16,7 @@ class ZendeskMessagingPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
-      private val tag = "[ZendeskMessagingPlugin]"
+  private val tag = "[ZendeskMessagingPlugin]"
   private lateinit var channel : MethodChannel
   private lateinit var zendeskMessaging: ZendeskMessaging
 
@@ -35,7 +35,6 @@ class ZendeskMessagingPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
     when (call.method){
       "initialize" -> {
       val channelKey = call.argument<String>("channelKey")!!
-      println("Channel KEY >>>>> $channelKey \n ${activity}")
                 zendeskMessaging.initialize(channelKey, result) 
       } 
             "show" -> {

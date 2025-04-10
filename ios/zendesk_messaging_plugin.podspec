@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter plugin project.'
   s.description      = <<-DESC
-A new Flutter plugin project.
+A Flutter for Zendesk Chat support.
                        DESC
-  s.homepage         = 'https://example.com'
+  s.homepage         = 'https://github.com/maroafenogho/zendesk_messaging_plugin'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Oghenemaro Afenogho' => 'maroafenogho@gmail.com' }
   s.source           = { :path => '.' }
@@ -19,7 +19,7 @@ A new Flutter plugin project.
   s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.
-   s.cocoapods_version = '>= 1.15.0'
+   s.cocoapods_version = '>= 1.10.0'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 
