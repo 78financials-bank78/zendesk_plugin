@@ -61,12 +61,7 @@ class _MyAppState extends State<MyApp> {
 
             ElevatedButton(
               onPressed: () {
-                ZendeskMessagingPlugin.initialize(
-                  androidKey:
-                      'eyJzZXR0aW5nc191cmwiOiJodHRwczovLzc4ZmluYW5jaWFsc29sdXRpb25zLnplbmRlc2suY29tL21vYmlsZV9zZGtfYXBpL3NldHRpbmdzLzAxSEMwMEMyWFBLTlFIVzhOVkowTk5OME00Lmpzb24ifQ==',
-                  iosKey:
-                      'eyJzZXR0aW5nc191cmwiOiJodHRwczovLzc4ZmluYW5jaWFsc29sdXRpb25zLnplbmRlc2suY29tL21vYmlsZV9zZGtfYXBpL3NldHRpbmdzLzAxSEMwMEZDNDAwMUZFN1lZUDNYV0U4MTE1Lmpzb24ifQ==',
-                );
+                ZendeskMessagingPlugin.initialize(androidKey: '', iosKey: '');
               },
               child: Text('Init zendesk'),
             ),
