@@ -44,6 +44,14 @@ class ZendeskMessagingPlugin {
     }
   }
 
+  static Future<void> loginUser(String jwt) async {
+    try {
+      await ZendeskMessagingPluginPlatform.instance.loginUser(jwt);
+    } catch (e) {
+      debugPrint('ZendeskMessagingPlugin: Login Error - $e');
+    }
+  }
+
   Future<String?> getPlatformVersion() {
     return ZendeskMessagingPluginPlatform.instance.getPlatformVersion();
   }

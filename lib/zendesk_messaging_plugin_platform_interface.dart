@@ -31,4 +31,5 @@ abstract class ZendeskMessagingPluginPlatform extends PlatformInterface {
   Future<void> initialize({required String iosKey, required String androidKey});
 
   Future<void> showMessaging();
+  Future<void> loginUser(String jwt);
 }

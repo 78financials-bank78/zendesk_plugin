@@ -66,7 +66,8 @@ class _MyAppState extends State<MyApp> {
               child: Text('Init zendesk'),
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
+                await ZendeskMessagingPlugin.loginUser('');
                 ZendeskMessagingPlugin.showMessaging();
               },
               child: Text('Show zendesk'),

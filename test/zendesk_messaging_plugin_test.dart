@@ -24,6 +24,12 @@ class MockZendeskMessagingPluginPlatform
     // TODO: implement showMessaging
     throw UnimplementedError();
   }
+
+  @override
+  Future<void> loginUser(String jwt) {
+    // TODO: implement loginUser
+    throw UnimplementedError();
+  }
 }
 
 void main() {

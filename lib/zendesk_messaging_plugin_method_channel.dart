@@ -42,4 +42,13 @@ class MethodChannelZendeskMessagingPlugin
       debugPrint('ZendeskMessagingPlugin: Error - $e');
     }
   }
+
+  @override
+  Future<void> loginUser(String jwt) async {
+    try {
+      await methodChannel.invokeMethod('loginUser', {'jwt': jwt});
+    } catch (e) {
+      debugPrint('ZendeskError: Error - $e');
+    }
+  }
 }

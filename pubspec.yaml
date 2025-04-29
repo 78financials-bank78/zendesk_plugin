@@ -1,11 +1,11 @@
 name: zendesk_messaging_plugin
 description: "A new Flutter plugin project."
-version: 0.0.1
+version: 0.0.2
 homepage:
 
 environment:
-  sdk: ^3.5.0
-  flutter: '>=3.3.0'
+  sdk: ^3.3.0
+  flutter: '>=3.19.0'
 
 dependencies:
   flutter:
