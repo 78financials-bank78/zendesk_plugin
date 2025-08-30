@@ -1,6 +1,6 @@
 name: zendesk_messaging_plugin
-description: "A new Flutter plugin project."
-version: 0.0.2
+description: "FlutterPlugin for zendesk."
+version: 0.0.3
 homepage:
 
 environment:

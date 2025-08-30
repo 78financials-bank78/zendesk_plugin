@@ -18,7 +18,7 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  zendesk_messaging_plugin: ^0.0.2
+  zendesk_messaging_plugin: ^0.0.3
 ```
 ## Platform Setup
 ### 1. Add this to your android/build.gradle
